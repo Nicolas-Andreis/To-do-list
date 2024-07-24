@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="./style.css">
+    <!--Favicon-->
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <p>Hola</p>
+        <p>Hora: <span id="current-time"></span></p>
+    </header>
+    <main>
+        <h1>To do list <img src="./images/logo.png" alt="logo"></h1>
+
+        <div class="input">
+            <input type="text" placeholder="Ingrese tarea">
+            <button>Agregar</button>
+        </div>
+        <h3 id="current-date">Fecha: </h3>
+        <div class="task-container">
+            
+        </div>
+        
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./main.js"></script>
+    <script>
+        function updateTimeAndDate() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            const dateString = now.toLocaleDateString();
+
+            document.getElementById('current-time').textContent = timeString;
+            document.getElementById('current-date').textContent = 'Fecha: ' + dateString;
+        }
+
+        // Actualizar la hora y fecha al cargar la página
+        updateTimeAndDate();
+
+        // Actualizar la hora cada segundo
+        setInterval(updateTimeAndDate, 1000);
+    </script>
+</body>
+</html>
